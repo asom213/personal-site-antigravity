@@ -41,71 +41,25 @@ export default function IntroSection() {
                 zIndex: 1
             }} />
 
-            <motion.div
-                style={{ y, opacity, zIndex: 10, textAlign: 'center' }}
-                initial="hidden"
-                animate="visible"
-                variants={{
-                    hidden: { opacity: 0 },
-                    visible: {
-                        opacity: 1,
-                        transition: { staggerChildren: 0.2, delayChildren: 0.3 }
-                    }
-                }}
-            >
+            <motion.div style={{ y, opacity, zIndex: 10 }}>
                 <motion.h1
-                    variants={{
-                        hidden: { opacity: 0, y: 20 },
-                        visible: { opacity: 1, y: 0 }
-                    }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                     style={{
-                        fontSize: 'clamp(5rem, 15vw, 10rem)',
-                        fontWeight: 700,
-                        lineHeight: 1,
-                        letterSpacing: '-0.02em',
-                        color: '#fff',
-                        margin: 0,
+                        fontSize: 'clamp(3rem, 8vw, 6rem)',
+                        fontWeight: 800,
+                        lineHeight: 1.1,
+                        letterSpacing: '-0.04em',
+                        color: 'var(--text-main)',
+                        maxWidth: '1200px',
                         textShadow: '0 4px 12px rgba(0,0,0,0.5)'
                     }}
                 >
-                    Xu
+                    i build products.<br />
+                    <span style={{ color: 'var(--text-muted)' }}>and capture moments.</span><br />
+                    everywhere.
                 </motion.h1>
-
-                <motion.h2
-                    variants={{
-                        hidden: { opacity: 0, y: 20 },
-                        visible: { opacity: 1, y: 0 }
-                    }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    style={{
-                        fontSize: 'clamp(1.2rem, 3vw, 2rem)',
-                        fontWeight: 400,
-                        color: '#fff',
-                        marginTop: '1rem',
-                        marginBottom: '0.5rem',
-                        textShadow: '0 2px 8px rgba(0,0,0,0.5)'
-                    }}
-                >
-                    Product Manager <span style={{ opacity: 0.5 }}>&bull;</span> Photographer <span style={{ opacity: 0.5 }}>&bull;</span> Videographer
-                </motion.h2>
-
-                <motion.p
-                    variants={{
-                        hidden: { opacity: 0, y: 20 },
-                        visible: { opacity: 1, y: 0 }
-                    }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    style={{
-                        fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                        color: 'var(--text-muted)',
-                        margin: 0,
-                        fontWeight: 300,
-                        textShadow: '0 1px 4px rgba(0,0,0,0.8)'
-                    }}
-                >
-                    Building products and capturing moments. Everywhere.
-                </motion.p>
             </motion.div>
 
             {/* Scroll Indicator */}

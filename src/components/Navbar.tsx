@@ -38,6 +38,7 @@ export default function Navbar() {
             </div>
             <div style={{ display: 'flex', gap: '2rem', fontSize: '0.9rem', fontWeight: 500 }}>
                 <a href="#intro">Intro</a>
+                <a href="#about">About</a>
                 <a href="#photography">Photography</a>
                 <a href="#product">Product</a>
                 <a href="#videography">Videography</a>
