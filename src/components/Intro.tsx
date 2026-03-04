@@ -50,13 +50,13 @@ export default function IntroSection() {
                         fontWeight: 800,
                         lineHeight: 1.1,
                         letterSpacing: '-0.04em',
-                        color: 'var(--text-main)',
+                        color: '#ffffff',
                         maxWidth: '1200px',
                         textShadow: '0 4px 12px rgba(0,0,0,0.5)'
                     }}
                 >
                     i build products.<br />
-                    <span style={{ color: 'var(--text-muted)' }}>and capture moments.</span><br />
+                    <span style={{ color: 'rgba(255,255,255,0.7)' }}>and capture moments.</span><br />
                     everywhere.
                 </motion.h1>
             </motion.div>
