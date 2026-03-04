@@ -175,18 +175,20 @@ export default function HeroSlider() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 style={{
-                                    background: 'transparent',
-                                    border: isActive ? '1px solid #ffffff' : '1px solid transparent',
-                                    color: isActive ? '#ffffff' : 'rgba(255,255,255,0.6)',
+                                    background: isActive ? '#ffffff' : 'rgba(255, 255, 255, 0.15)',
+                                    backdropFilter: 'blur(10px)',
+                                    WebkitBackdropFilter: 'blur(10px)',
+                                    border: isActive ? '1px solid #ffffff' : '1px solid rgba(255, 255, 255, 0.1)',
+                                    color: isActive ? '#000000' : '#ffffff',
                                     borderRadius: '30px',
-                                    padding: '0.5rem 1.5rem',
-                                    fontSize: '1.1rem',
+                                    padding: '0.6rem 1.5rem',
+                                    fontSize: '1rem',
                                     fontWeight: 600,
                                     cursor: 'pointer',
-                                    transition: 'color 0.3s ease',
+                                    transition: 'all 0.3s ease',
                                     whiteSpace: 'nowrap',
                                     outline: 'none',
-                                    boxShadow: isActive ? '0 0 15px rgba(255,255,255,0.1)' : 'none'
+                                    boxShadow: isActive ? '0 4px 15px rgba(255,255,255,0.2)' : '0 4px 15px rgba(0,0,0,0.1)'
                                 }}
                             >
                                 {category}
