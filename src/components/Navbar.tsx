@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const LINKS = [
@@ -12,11 +12,15 @@ const LINKS = [
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('#intro');
+    const isManualScroll = useRef(false);
 
     // Handle scroll events to detect which section is in view
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
+
+            // Do not update active section via scroll if user just clicked a nav link
+            if (isManualScroll.current) return;
 
             // Simple intersection detection based on scroll position
             const sections = LINKS.map(link => link.href.substring(1));
@@ -90,7 +94,14 @@ export default function Navbar() {
                         <a
                             key={link.name}
                             href={link.href}
-                            onClick={() => setActiveSection(link.href)}
+                            onClick={() => {
+                                setActiveSection(link.href);
+                                // Lock the scroll listener for roughly the duration of the smooth scroll
+                                isManualScroll.current = true;
+                                setTimeout(() => {
+                                    isManualScroll.current = false;
+                                }, 800);
+                            }}
                             style={{
                                 position: 'relative',
                                 padding: '0.5rem 1.2rem',
