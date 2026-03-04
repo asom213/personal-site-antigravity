@@ -4,6 +4,7 @@ import About from './components/About';
 import HeroSlider from './components/HeroSlider';
 import ProductManager from './components/ProductManager';
 import Videography from './components/Videography';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
         <ProductManager />
         <Videography />
+        <Contact />
       </main>
       <Footer />
     </>

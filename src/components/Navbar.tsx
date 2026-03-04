@@ -7,6 +7,7 @@ const LINKS = [
     { name: 'Photography', href: '#photography' },
     { name: 'Product', href: '#product' },
     { name: 'Videos', href: '#videography' },
+    { name: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
