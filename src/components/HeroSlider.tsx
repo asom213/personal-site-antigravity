@@ -99,8 +99,23 @@ export default function HeroSlider() {
                             <h1 style={{ fontSize: '4rem', fontWeight: 700, margin: 0, textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                                 {activeImage.title}
                             </h1>
-                            <p style={{ fontSize: '1.5rem', color: '#ccc', marginTop: '0.5rem', marginBottom: '1.5rem', textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+                            <p style={{ fontSize: '1.5rem', color: '#ccc', marginTop: '0.5rem', marginBottom: '1rem', textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
                                 {activeImage.subtitle}
+                            </p>
+
+                            <p style={{
+                                fontSize: '1.15rem',
+                                lineHeight: 1.5,
+                                color: '#e5e5e5',
+                                marginBottom: '2rem',
+                                textShadow: '1px 1px 4px rgba(0,0,0,0.8)',
+                                fontWeight: 300,
+                                maxWidth: '90%'
+                            }}>
+                                {(activeImage.category === 'Portrait' || activeImage.category === 'Engagement')
+                                    ? "Every portrait begins with collaboration. I work closely with my subjects using moodboards to establish a shared vision, then guide them through the session with thoughtful direction. My focus is on capturing authentic emotion and revealing the natural beauty that emerges when people feel seen and comfortable in front of the lens."
+                                    : "My approach is rooted in careful observation. Whether wandering bustling streets or vast landscapes, I wait for that perfect, fleeting alignment of light, subject, and moment to tell a compelling visual story without staging."
+                                }
                             </p>
 
                             <motion.button
