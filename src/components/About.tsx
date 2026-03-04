@@ -72,15 +72,16 @@ export default function About() {
                     {/* Product Card */}
                     <motion.div
                         variants={cardVariants}
-                        whileHover={{ y: -5, boxShadow: '0 8px 30px rgba(0,0,0,0.5)' }}
+                        whileHover={{ y: -5, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
                         style={{
-                            background: 'rgba(255,255,255,0.03)',
-                            border: '1px solid rgba(255,255,255,0.1)',
+                            background: '#ffffff',
+                            border: '1px solid rgba(0,0,0,0.05)',
                             borderRadius: '12px',
                             padding: '1.5rem',
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '0.5rem'
+                            gap: '0.5rem',
+                            boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                         }}
                     >
                         <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>💻</div>
@@ -93,15 +94,16 @@ export default function About() {
                     {/* Photography Card */}
                     <motion.div
                         variants={cardVariants}
-                        whileHover={{ y: -5, boxShadow: '0 8px 30px rgba(0,0,0,0.5)' }}
+                        whileHover={{ y: -5, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
                         style={{
-                            background: 'rgba(255,255,255,0.03)',
-                            border: '1px solid rgba(255,255,255,0.1)',
+                            background: '#ffffff',
+                            border: '1px solid rgba(0,0,0,0.05)',
                             borderRadius: '12px',
                             padding: '1.5rem',
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '0.5rem'
+                            gap: '0.5rem',
+                            boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                         }}
                     >
                         <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>📷</div>
@@ -114,15 +116,16 @@ export default function About() {
                     {/* Video Card */}
                     <motion.div
                         variants={cardVariants}
-                        whileHover={{ y: -5, boxShadow: '0 8px 30px rgba(0,0,0,0.5)' }}
+                        whileHover={{ y: -5, boxShadow: '0 12px 40px rgba(0,0,0,0.08)' }}
                         style={{
-                            background: 'rgba(255,255,255,0.03)',
-                            border: '1px solid rgba(255,255,255,0.1)',
+                            background: '#ffffff',
+                            border: '1px solid rgba(0,0,0,0.05)',
                             borderRadius: '12px',
                             padding: '1.5rem',
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '0.5rem'
+                            gap: '0.5rem',
+                            boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
                         }}
                     >
                         <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>🎬</div>

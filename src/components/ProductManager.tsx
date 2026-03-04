@@ -37,12 +37,12 @@ export default function ProductManager() {
                             hidden: { opacity: 0, y: 30 },
                             visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
                         }}
-                        whileHover={{ y: -10, scale: 1.02, boxShadow: '0 20px 40px rgba(229,9,20,0.15)' }}
+                        whileHover={{ y: -10, scale: 1.02, boxShadow: '0 20px 40px rgba(0,102,204,0.1)' }} // Apple Link Blue shadow
                         style={{
-                            background: 'var(--bg-color)',
+                            background: '#ffffff',
                             padding: '3rem 2rem',
                             borderRadius: '16px',
-                            border: '1px solid rgba(255,255,255,0.05)',
+                            border: '1px solid rgba(0,0,0,0.05)',
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'center',
@@ -50,7 +50,7 @@ export default function ProductManager() {
                             textAlign: 'center',
                             cursor: 'pointer',
                             transition: 'box-shadow 0.3s ease',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+                            boxShadow: '0 10px 30px rgba(0,0,0,0.04)'
                         }}
                     >
                         <div style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--text-main)' }}>
@@ -66,12 +66,12 @@ export default function ProductManager() {
                             hidden: { opacity: 0, y: 30 },
                             visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
                         }}
-                        whileHover={{ y: -10, scale: 1.02, boxShadow: '0 20px 40px rgba(255,255,255,0.05)' }}
+                        whileHover={{ y: -10, scale: 1.02, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
                         style={{
-                            background: 'var(--bg-color)',
+                            background: '#ffffff',
                             padding: '3rem 2rem',
                             borderRadius: '16px',
-                            border: '1px solid rgba(255,255,255,0.05)',
+                            border: '1px solid rgba(0,0,0,0.05)',
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'center',
@@ -79,7 +79,7 @@ export default function ProductManager() {
                             textAlign: 'center',
                             cursor: 'pointer',
                             transition: 'box-shadow 0.3s ease',
-                            boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+                            boxShadow: '0 10px 30px rgba(0,0,0,0.04)'
                         }}
                     >
                         <div style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--text-main)' }}>

@@ -43,15 +43,15 @@ export default function Videography() {
                                 hidden: { opacity: 0, scale: 0.95 },
                                 visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
                             }}
-                            whileHover={{ scale: 1.02, boxShadow: '0 20px 40px rgba(229,9,20,0.2)' }}
+                            whileHover={{ scale: 1.02, boxShadow: '0 20px 40px rgba(0,102,204,0.1)' }}
                             style={{
                                 borderRadius: '16px',
                                 overflow: 'hidden',
                                 aspectRatio: '16/9',
-                                backgroundColor: '#181818',
+                                backgroundColor: '#181818', // Keep iframe container dark for video letterboxing
                                 position: 'relative',
                                 transition: 'box-shadow 0.3s ease',
-                                boxShadow: '0 10px 30px rgba(0,0,0,0.8)'
+                                boxShadow: '0 10px 30px rgba(0,0,0,0.08)'
                             }}
                         >
                             <div style={{ padding: '40% 0 0 0', position: 'relative' }}>
