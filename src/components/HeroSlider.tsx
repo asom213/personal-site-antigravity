@@ -126,7 +126,7 @@ export default function HeroSlider() {
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '0.5rem',
-                                    background: 'var(--text-main)',
+                                    background: '#ffffff',
                                     color: '#000',
                                     border: 'none',
                                     padding: '0.8rem 2rem',
@@ -176,8 +176,8 @@ export default function HeroSlider() {
                                 whileTap={{ scale: 0.95 }}
                                 style={{
                                     background: 'transparent',
-                                    border: isActive ? '1px solid var(--text-main)' : '1px solid transparent',
-                                    color: isActive ? 'var(--text-main)' : 'var(--text-muted)',
+                                    border: isActive ? '1px solid #ffffff' : '1px solid transparent',
+                                    color: isActive ? '#ffffff' : 'rgba(255,255,255,0.6)',
                                     borderRadius: '30px',
                                     padding: '0.5rem 1.5rem',
                                     fontSize: '1.1rem',
@@ -217,31 +217,31 @@ export default function HeroSlider() {
                             padding: '6rem 5% 4rem'
                         }}
                     >
-                        <button
-                            onClick={() => setIsGalleryOpen(false)}
-                            style={{
-                                position: 'absolute',
-                                top: '2rem',
-                                right: '5%',
-                                background: 'rgba(255,255,255,0.1)',
-                                border: 'none',
-                                color: '#fff',
-                                width: '48px',
-                                height: '48px',
-                                borderRadius: '50%',
-                                fontSize: '1.5rem',
-                                cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}
-                        >
-                            ✕
-                        </button>
-
                         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+                            {/* Return Button */}
+                            <button
+                                onClick={() => setIsGalleryOpen(false)}
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    background: 'transparent',
+                                    border: 'none',
+                                    color: 'var(--text-main)',
+                                    fontSize: '1.1rem',
+                                    fontWeight: 600,
+                                    cursor: 'pointer',
+                                    padding: '0 0 2rem 0',
+                                }}
+                            >
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                                </svg>
+                                Back to Photography
+                            </button>
+
                             <div style={{ marginBottom: '4rem', maxWidth: '800px' }}>
-                                <h2 style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>{activeImage.title}</h2>
+                                <h2 style={{ fontSize: '3.5rem', marginBottom: '1rem', color: 'var(--text-main)' }}>{activeImage.title}</h2>
 
                                 {/* Photography Philosophy */}
                                 <div style={{
