@@ -14,6 +14,7 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('#intro');
     const isManualScroll = useRef(false);
+    const scrollTimeout = useRef<any>(null);
 
     // Handle scroll events to detect which section is in view
     useEffect(() => {
@@ -97,11 +98,14 @@ export default function Navbar() {
                             href={link.href}
                             onClick={() => {
                                 setActiveSection(link.href);
-                                // Lock the scroll listener for roughly the duration of the smooth scroll
+                                // Lock the scroll listener for the duration of the smooth scroll
                                 isManualScroll.current = true;
-                                setTimeout(() => {
+                                if (scrollTimeout.current) {
+                                    clearTimeout(scrollTimeout.current);
+                                }
+                                scrollTimeout.current = setTimeout(() => {
                                     isManualScroll.current = false;
-                                }, 800);
+                                }, 1500); // Increased timeout for longer scroll distances
                             }}
                             style={{
                                 position: 'relative',
