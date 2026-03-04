@@ -20,12 +20,11 @@ export default function IntroSection() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'center',
                 padding: '0 5%',
                 position: 'relative',
                 overflow: 'hidden',
                 // Using a moody, high-quality mountain/landscape placeholder from Unsplash
-                backgroundImage: 'url("https://images.unsplash.com/photo-1542224566-6f3de5865246?q=80&w=3000&auto=format&fit=crop")',
+                backgroundImage: 'url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=3000&auto=format&fit=crop")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}
