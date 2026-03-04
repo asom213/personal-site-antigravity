@@ -1,0 +1,6 @@
+/* Clean App.css, leaving all heavy lifting to scoped modules or styled/inline */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
