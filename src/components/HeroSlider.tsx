@@ -2,28 +2,115 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ALL_IMAGES = [
-    { src: 'https://images.unsplash.com/photo-1542051812-099058c1470e?q=80&w=3000&auto=format&fit=crop', title: 'Street Photography', subtitle: 'Neon Nights in Tokyo', category: 'Street' },
-    { src: 'https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=3000&auto=format&fit=crop', title: 'Street Photography', subtitle: 'Urban Shadows', category: 'Street' },
-    { src: 'https://images.unsplash.com/photo-1547466185-5a1e8a4bb2f6?q=80&w=3000&auto=format&fit=crop', title: 'Street Photography', subtitle: 'City Pulses', category: 'Street' },
-    { src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=3000&auto=format&fit=crop', title: 'Travel Explorations', subtitle: 'Epic Landscapes', category: 'Travel' },
-    { src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=3000&auto=format&fit=crop', title: 'Travel Explorations', subtitle: 'Wanderlust', category: 'Travel' },
-    { src: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=3000&auto=format&fit=crop', title: 'Travel Explorations', subtitle: 'Hidden Gems', category: 'Travel' },
-    { src: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=3000&auto=format&fit=crop', title: 'Portraits', subtitle: 'Capturing the Human Spirit', category: 'Portrait' },
-    { src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3000&auto=format&fit=crop', title: 'Portraits', subtitle: 'Natural Beauty', category: 'Portrait' },
-    { src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=3000&auto=format&fit=crop', title: 'Portraits', subtitle: 'Authentic Emotion', category: 'Portrait' },
-    { src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=3000&auto=format&fit=crop', title: 'Engagements', subtitle: 'Two Beginnings', category: 'Engagement' },
-    { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=3000&auto=format&fit=crop', title: 'Engagements', subtitle: 'Modern Romance', category: 'Engagement' },
-    { src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=3000&auto=format&fit=crop', title: 'Engagements', subtitle: 'Quiet Moments', category: 'Engagement' }
+    {
+        id: '1',
+        fullSrc: 'https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?q=60&w=600&auto=format&fit=crop',
+        title: 'Street Photography',
+        subtitle: 'Neon Nights in Tokyo',
+        category: 'Street'
+    },
+    {
+        id: '2',
+        fullSrc: 'https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?q=60&w=600&auto=format&fit=crop',
+        title: 'Street Photography',
+        subtitle: 'Urban Shadows',
+        category: 'Street'
+    },
+    {
+        id: '3',
+        fullSrc: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?q=60&w=600&auto=format&fit=crop',
+        title: 'Street Photography',
+        subtitle: 'City Pulses',
+        category: 'Street'
+    },
+    {
+        id: '4',
+        fullSrc: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=60&w=600&auto=format&fit=crop',
+        title: 'Travel Explorations',
+        subtitle: 'Epic Landscapes',
+        category: 'Travel'
+    },
+    {
+        id: '5',
+        fullSrc: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=60&w=600&auto=format&fit=crop',
+        title: 'Travel Explorations',
+        subtitle: 'Wanderlust',
+        category: 'Travel'
+    },
+    {
+        id: '6',
+        fullSrc: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=60&w=600&auto=format&fit=crop',
+        title: 'Travel Explorations',
+        subtitle: 'Hidden Gems',
+        category: 'Travel'
+    },
+    {
+        id: '7',
+        fullSrc: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=60&w=600&auto=format&fit=crop',
+        title: 'Portraits',
+        subtitle: 'Capturing the Human Spirit',
+        category: 'Portrait'
+    },
+    {
+        id: '8',
+        fullSrc: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=60&w=600&auto=format&fit=crop',
+        title: 'Portraits',
+        subtitle: 'Natural Beauty',
+        category: 'Portrait'
+    },
+    {
+        id: '9',
+        fullSrc: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=60&w=600&auto=format&fit=crop',
+        title: 'Portraits',
+        subtitle: 'Authentic Emotion',
+        category: 'Portrait'
+    },
+    {
+        id: '10',
+        fullSrc: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=60&w=600&auto=format&fit=crop',
+        title: 'Engagements',
+        subtitle: 'Two Beginnings',
+        category: 'Engagement'
+    },
+    {
+        id: '11',
+        fullSrc: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=60&w=600&auto=format&fit=crop',
+        title: 'Engagements',
+        subtitle: 'Modern Romance',
+        category: 'Engagement'
+    },
+    {
+        id: '12',
+        fullSrc: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=60&w=600&auto=format&fit=crop',
+        title: 'Engagements',
+        subtitle: 'Quiet Moments',
+        category: 'Engagement'
+    }
 ];
 
-const CATEGORIES = ['Featured', 'Street', 'Portrait', 'Engagement', 'Travel'];
+const CATEGORIES = ['Photography', 'Street', 'Portrait', 'Engagement', 'Travel'];
 
 export default function HeroSlider() {
-    const [activeCategory, setActiveCategory] = useState('Featured');
+    const [activeCategory, setActiveCategory] = useState('Photography');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
-    const filteredImages = activeCategory === 'Featured'
+    // Lightbox State
+    const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+    const filteredImages = activeCategory === 'Photography'
         ? ALL_IMAGES
         : ALL_IMAGES.filter(img => img.category === activeCategory);
 
@@ -32,12 +119,30 @@ export default function HeroSlider() {
     }, [activeCategory]);
 
     useEffect(() => {
-        if (filteredImages.length <= 1 || isGalleryOpen) return;
+        // Pause slider if gallery or lightbox is open
+        if (filteredImages.length <= 1 || isGalleryOpen || lightboxIndex !== null) return;
         const timer = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % filteredImages.length);
-        }, 6000); // Netflix style slow swap
+        }, 6000);
         return () => clearInterval(timer);
-    }, [filteredImages.length, activeCategory, isGalleryOpen]);
+    }, [filteredImages.length, activeCategory, isGalleryOpen, lightboxIndex]);
+
+    // Handle Keyboard Navigation for Lightbox
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (lightboxIndex === null) return;
+            if (e.key === 'ArrowRight') {
+                setLightboxIndex((prev) => (prev! + 1) % filteredImages.length);
+            } else if (e.key === 'ArrowLeft') {
+                setLightboxIndex((prev) => (prev! - 1 + filteredImages.length) % filteredImages.length);
+            } else if (e.key === 'Escape') {
+                setLightboxIndex(null);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [lightboxIndex, filteredImages.length]);
 
     const activeImage = filteredImages[currentIndex] || ALL_IMAGES[0];
 
@@ -45,7 +150,7 @@ export default function HeroSlider() {
         <div style={{ position: 'relative', height: '100vh', width: '100vw', backgroundColor: '#000', overflow: 'hidden' }}>
             <AnimatePresence initial={false}>
                 <motion.div
-                    key={activeImage.src}
+                    key={activeImage.id}
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
@@ -56,7 +161,7 @@ export default function HeroSlider() {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        backgroundImage: `url(${activeImage.src})`,
+                        backgroundImage: `url(${activeImage.fullSrc})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                     }}
@@ -90,21 +195,21 @@ export default function HeroSlider() {
                 <div style={{ color: '#fff', maxWidth: '600px' }}>
                     <AnimatePresence mode="wait">
                         <motion.div
-                            key={activeImage.src}
+                            key={activeImage.id}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h1 style={{ fontSize: '4rem', fontWeight: 700, margin: 0, textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-                                {activeImage.title}
+                            <h1 style={{ fontSize: '3rem', fontWeight: 700, margin: 0, textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+                                {activeCategory === 'Photography' ? 'Photography Collection' : activeImage.title}
                             </h1>
-                            <p style={{ fontSize: '1.5rem', color: '#ccc', marginTop: '0.5rem', marginBottom: '1rem', textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
-                                {activeImage.subtitle}
+                            <p style={{ fontSize: '1.2rem', color: '#ccc', marginTop: '0.5rem', marginBottom: '1rem', textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+                                {activeCategory === 'Photography' ? 'A selection of my finest work' : activeImage.subtitle}
                             </p>
 
                             <p style={{
-                                fontSize: '1.15rem',
+                                fontSize: '1rem',
                                 lineHeight: 1.5,
                                 color: '#e5e5e5',
                                 marginBottom: '2rem',
@@ -112,9 +217,11 @@ export default function HeroSlider() {
                                 fontWeight: 300,
                                 maxWidth: '90%'
                             }}>
-                                {(activeImage.category === 'Portrait' || activeImage.category === 'Engagement')
-                                    ? "Every portrait begins with collaboration. I work closely with my subjects using moodboards to establish a shared vision, then guide them through the session with thoughtful direction. My focus is on capturing authentic emotion and revealing the natural beauty that emerges when people feel seen and comfortable in front of the lens."
-                                    : "My approach is rooted in careful observation. Whether wandering bustling streets or vast landscapes, I wait for that perfect, fleeting alignment of light, subject, and moment to tell a compelling visual story without staging."
+                                {activeCategory === 'Photography'
+                                    ? "Welcome to my portfolio. This curated collection showcases a blend of my favorite moments captured across various styles—from intimate portraits to vibrant street scenes and breathtaking landscapes."
+                                    : (activeImage.category === 'Portrait' || activeImage.category === 'Engagement')
+                                        ? "Every portrait begins with collaboration. I work closely with my subjects using moodboards to establish a shared vision, then guide them through the session with thoughtful direction. My focus is on capturing authentic emotion and revealing the natural beauty that emerges when people feel seen and comfortable in front of the lens."
+                                        : "My approach is rooted in careful observation. Whether wandering bustling streets or vast landscapes, I wait for that perfect, fleeting alignment of light, subject, and moment to tell a compelling visual story without staging."
                                 }
                             </p>
 
@@ -143,7 +250,7 @@ export default function HeroSlider() {
                                 View Gallery
                             </motion.button>
                             <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>
-                                Click to explore {activeImage.title.toLowerCase()}
+                                Click to explore {activeCategory === 'Photography' ? 'my photography' : activeImage.title.toLowerCase()}
                             </div>
                         </motion.div>
                     </AnimatePresence>
@@ -201,7 +308,7 @@ export default function HeroSlider() {
 
             {/* Expanded Gallery Modal */}
             <AnimatePresence>
-                {isGalleryOpen && (
+                {isGalleryOpen && lightboxIndex === null && (
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -243,7 +350,9 @@ export default function HeroSlider() {
                             </button>
 
                             <div style={{ marginBottom: '4rem', maxWidth: '800px' }}>
-                                <h2 style={{ fontSize: '3.5rem', marginBottom: '1rem', color: 'var(--text-main)' }}>{activeImage.title}</h2>
+                                <h2 style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--text-main)', fontWeight: 600 }}>
+                                    {activeCategory === 'Photography' ? 'Photography' : activeImage.title}
+                                </h2>
 
                                 {/* Photography Philosophy */}
                                 <div style={{
@@ -252,9 +361,16 @@ export default function HeroSlider() {
                                     borderLeft: '4px solid var(--accent)',
                                     borderRadius: '0 12px 12px 0'
                                 }}>
-                                    <h3 style={{ fontSize: '1.2rem', color: 'var(--text-muted)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Methodology</h3>
-                                    <p style={{ fontSize: '1.4rem', lineHeight: 1.6, color: 'var(--text-main)', fontWeight: 300 }}>
-                                        "I co-create with my subjects. By blending collaborative moodboards with natural prompts, we capture authentic emotion and inner beauty, focusing on genuine human connection rather than stiff poses."
+                                    <h3 style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                                        {activeCategory === 'Photography' ? 'Curation' : (activeImage.category === 'Portrait' || activeImage.category === 'Engagement') ? 'Methodology' : 'Observation'}
+                                    </h3>
+                                    <p style={{ fontSize: '1.2rem', lineHeight: 1.6, color: 'var(--text-main)', fontWeight: 300 }}>
+                                        {activeCategory === 'Photography'
+                                            ? "A thoughtfully curated selection highlighting my finest work across portraiture, street snapshots, and travel landscapes. Each photograph represents a defining moment in my journey as a visual storyteller."
+                                            : (activeImage.category === 'Portrait' || activeImage.category === 'Engagement')
+                                                ? "\"I co-create with my subjects. By blending collaborative moodboards with natural prompts, we capture authentic emotion and inner beauty, focusing on genuine human connection rather than stiff poses.\""
+                                                : "\"My approach is rooted in careful observation. Whether wandering bustling streets or vast landscapes, I wait for that perfect, fleeting alignment of light, subject, and moment to tell a compelling visual story without staging.\""
+                                        }
                                     </p>
                                 </div>
                             </div>
@@ -274,7 +390,8 @@ export default function HeroSlider() {
                             >
                                 {filteredImages.map((img, idx) => (
                                     <motion.div
-                                        key={idx}
+                                        key={img.id}
+                                        onClick={() => setLightboxIndex(idx)}
                                         variants={{
                                             hidden: { opacity: 0, scale: 0.9 },
                                             visible: { opacity: 1, scale: 1 }
@@ -289,8 +406,9 @@ export default function HeroSlider() {
                                         }}
                                     >
                                         <img
-                                            src={img.src}
+                                            src={img.thumbSrc}
                                             alt={img.subtitle}
+                                            loading="lazy"
                                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                         />
                                         <div style={{
@@ -310,6 +428,146 @@ export default function HeroSlider() {
                                 ))}
                             </motion.div>
                         </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Lightbox / Slideshow View */}
+            <AnimatePresence>
+                {lightboxIndex !== null && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        style={{
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            width: '100vw',
+                            height: '100vh',
+                            background: 'rgba(0,0,0,0.95)',
+                            zIndex: 300,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}
+                    >
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setLightboxIndex(null)}
+                            style={{
+                                position: 'absolute',
+                                top: '2rem',
+                                right: '3rem',
+                                background: 'transparent',
+                                border: 'none',
+                                color: '#fff',
+                                cursor: 'pointer',
+                                zIndex: 310,
+                                padding: '1rem'
+                            }}
+                        >
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M18 6L6 18M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        {/* Navigation Controls */}
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setLightboxIndex((prev) => (prev! - 1 + filteredImages.length) % filteredImages.length);
+                            }}
+                            style={{
+                                position: 'absolute',
+                                left: '2rem',
+                                background: 'rgba(255,255,255,0.1)',
+                                border: 'none',
+                                borderRadius: '50%',
+                                width: '50px',
+                                height: '50px',
+                                color: '#fff',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                zIndex: 310,
+                                transition: 'background 0.2s',
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+                            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setLightboxIndex((prev) => (prev! + 1) % filteredImages.length);
+                            }}
+                            style={{
+                                position: 'absolute',
+                                right: '2rem',
+                                background: 'rgba(255,255,255,0.1)',
+                                border: 'none',
+                                borderRadius: '50%',
+                                width: '50px',
+                                height: '50px',
+                                color: '#fff',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                zIndex: 310,
+                                transition: 'background 0.2s',
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
+                            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                        </button>
+
+                        {/* Image Container with AnimatePresence for transitions */}
+                        <AnimatePresence mode="wait">
+                            <motion.img
+                                key={filteredImages[lightboxIndex].id}
+                                src={filteredImages[lightboxIndex].fullSrc}
+                                alt={filteredImages[lightboxIndex].subtitle}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 0.3 }}
+                                style={{
+                                    maxWidth: '90vw',
+                                    maxHeight: '90vh',
+                                    objectFit: 'contain',
+                                    borderRadius: '4px',
+                                    boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+                                }}
+                            />
+                        </AnimatePresence>
+
+                        {/* Image Subtitle / Info */}
+                        <div style={{
+                            position: 'absolute',
+                            bottom: '2rem',
+                            textAlign: 'center',
+                            color: '#fff',
+                            textShadow: '1px 1px 4px rgba(0,0,0,0.8)'
+                        }}>
+                            <h3 style={{ fontSize: '1.5rem', fontWeight: 600, margin: '0 0 0.5rem 0' }}>
+                                {filteredImages[lightboxIndex].subtitle}
+                            </h3>
+                            <p style={{ margin: 0, color: '#ccc', fontSize: '1rem' }}>
+                                {lightboxIndex + 1} of {filteredImages.length}
+                            </p>
+                        </div>
+
                     </motion.div>
                 )}
             </AnimatePresence>
