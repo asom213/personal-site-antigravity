@@ -3,6 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const ALL_IMAGES = [
     {
+        id: 'intro',
+        fullSrc: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?q=60&w=600&auto=format&fit=crop',
+        title: 'Photography Collection',
+        subtitle: 'A selection of my finest work',
+        category: 'Photography'
+    },
+    {
         id: '1',
         fullSrc: 'https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?q=80&w=3000&auto=format&fit=crop',
         thumbSrc: 'https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?q=60&w=600&auto=format&fit=crop',
@@ -11,67 +19,11 @@ const ALL_IMAGES = [
         category: 'Street'
     },
     {
-        id: '2',
-        fullSrc: 'https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?q=80&w=3000&auto=format&fit=crop',
-        thumbSrc: 'https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?q=60&w=600&auto=format&fit=crop',
-        title: 'Street Photography',
-        subtitle: 'Urban Shadows',
-        category: 'Street'
-    },
-    {
-        id: '3',
-        fullSrc: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=3000&auto=format&fit=crop',
-        thumbSrc: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?q=60&w=600&auto=format&fit=crop',
-        title: 'Street Photography',
-        subtitle: 'City Pulses',
-        category: 'Street'
-    },
-    {
-        id: '4',
-        fullSrc: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=3000&auto=format&fit=crop',
-        thumbSrc: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=60&w=600&auto=format&fit=crop',
-        title: 'Travel Explorations',
-        subtitle: 'Epic Landscapes',
-        category: 'Travel'
-    },
-    {
-        id: '5',
-        fullSrc: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=3000&auto=format&fit=crop',
-        thumbSrc: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=60&w=600&auto=format&fit=crop',
-        title: 'Travel Explorations',
-        subtitle: 'Wanderlust',
-        category: 'Travel'
-    },
-    {
-        id: '6',
-        fullSrc: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=3000&auto=format&fit=crop',
-        thumbSrc: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=60&w=600&auto=format&fit=crop',
-        title: 'Travel Explorations',
-        subtitle: 'Hidden Gems',
-        category: 'Travel'
-    },
-    {
         id: '7',
         fullSrc: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=3000&auto=format&fit=crop',
         thumbSrc: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=60&w=600&auto=format&fit=crop',
         title: 'Portraits',
         subtitle: 'Capturing the Human Spirit',
-        category: 'Portrait'
-    },
-    {
-        id: '8',
-        fullSrc: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3000&auto=format&fit=crop',
-        thumbSrc: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=60&w=600&auto=format&fit=crop',
-        title: 'Portraits',
-        subtitle: 'Natural Beauty',
-        category: 'Portrait'
-    },
-    {
-        id: '9',
-        fullSrc: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=3000&auto=format&fit=crop',
-        thumbSrc: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=60&w=600&auto=format&fit=crop',
-        title: 'Portraits',
-        subtitle: 'Authentic Emotion',
         category: 'Portrait'
     },
     {
@@ -83,6 +35,30 @@ const ALL_IMAGES = [
         category: 'Engagement'
     },
     {
+        id: '4',
+        fullSrc: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=60&w=600&auto=format&fit=crop',
+        title: 'Travel Explorations',
+        subtitle: 'Epic Landscapes',
+        category: 'Travel'
+    },
+    {
+        id: '2',
+        fullSrc: 'https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?q=60&w=600&auto=format&fit=crop',
+        title: 'Street Photography',
+        subtitle: 'Urban Shadows',
+        category: 'Street'
+    },
+    {
+        id: '8',
+        fullSrc: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=60&w=600&auto=format&fit=crop',
+        title: 'Portraits',
+        subtitle: 'Natural Beauty',
+        category: 'Portrait'
+    },
+    {
         id: '11',
         fullSrc: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=3000&auto=format&fit=crop',
         thumbSrc: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=60&w=600&auto=format&fit=crop',
@@ -91,12 +67,44 @@ const ALL_IMAGES = [
         category: 'Engagement'
     },
     {
+        id: '5',
+        fullSrc: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=60&w=600&auto=format&fit=crop',
+        title: 'Travel Explorations',
+        subtitle: 'Wanderlust',
+        category: 'Travel'
+    },
+    {
+        id: '3',
+        fullSrc: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?q=60&w=600&auto=format&fit=crop',
+        title: 'Street Photography',
+        subtitle: 'City Pulses',
+        category: 'Street'
+    },
+    {
+        id: '9',
+        fullSrc: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=60&w=600&auto=format&fit=crop',
+        title: 'Portraits',
+        subtitle: 'Authentic Emotion',
+        category: 'Portrait'
+    },
+    {
         id: '12',
         fullSrc: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=3000&auto=format&fit=crop',
         thumbSrc: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=60&w=600&auto=format&fit=crop',
         title: 'Engagements',
         subtitle: 'Quiet Moments',
         category: 'Engagement'
+    },
+    {
+        id: '6',
+        fullSrc: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=3000&auto=format&fit=crop',
+        thumbSrc: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=60&w=600&auto=format&fit=crop',
+        title: 'Travel Explorations',
+        subtitle: 'Hidden Gems',
+        category: 'Travel'
     }
 ];
 
@@ -202,10 +210,10 @@ export default function HeroSlider() {
                             transition={{ duration: 0.8 }}
                         >
                             <h1 style={{ fontSize: '3rem', fontWeight: 700, margin: 0, textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-                                {activeCategory === 'Photography' ? 'Photography Collection' : activeImage.title}
+                                {activeImage.title}
                             </h1>
                             <p style={{ fontSize: '1.2rem', color: '#ccc', marginTop: '0.5rem', marginBottom: '1rem', textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
-                                {activeCategory === 'Photography' ? 'A selection of my finest work' : activeImage.subtitle}
+                                {activeImage.subtitle}
                             </p>
 
                             <p style={{
@@ -217,7 +225,7 @@ export default function HeroSlider() {
                                 fontWeight: 300,
                                 maxWidth: '90%'
                             }}>
-                                {activeCategory === 'Photography'
+                                {activeImage.category === 'Photography'
                                     ? "Welcome to my portfolio. This curated collection showcases a blend of my favorite moments captured across various styles—from intimate portraits to vibrant street scenes and breathtaking landscapes."
                                     : (activeImage.category === 'Portrait' || activeImage.category === 'Engagement')
                                         ? "Every portrait begins with collaboration. I work closely with my subjects using moodboards to establish a shared vision, then guide them through the session with thoughtful direction. My focus is on capturing authentic emotion and revealing the natural beauty that emerges when people feel seen and comfortable in front of the lens."
@@ -250,7 +258,7 @@ export default function HeroSlider() {
                                 View Gallery
                             </motion.button>
                             <div style={{ marginTop: '0.5rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>
-                                Click to explore {activeCategory === 'Photography' ? 'my photography' : activeImage.title.toLowerCase()}
+                                Click to explore {activeImage.category === 'Photography' ? 'my photography' : activeImage.title.toLowerCase()}
                             </div>
                         </motion.div>
                     </AnimatePresence>
@@ -274,7 +282,9 @@ export default function HeroSlider() {
                         `}
                     </style>
                     {CATEGORIES.map(category => {
-                        const isActive = activeCategory === category;
+                        const isActive = activeCategory === 'Photography'
+                            ? activeImage.category === category
+                            : activeCategory === category;
                         return (
                             <motion.button
                                 key={category}
